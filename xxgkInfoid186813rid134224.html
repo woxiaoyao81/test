@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>详细信息</title>
+    <link href="static/css/temp1.css" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon-precomposed" href="static/ico/favicon-57.png" />
+    <link rel="shortcut icon" href="static/ico/favicon.png" />
+    <style type="text/css">
+      .titleth {
+        font-weight: bold;
+        width: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: left;
+        background-color: #4a9d57;
+        color: #f9f9f9;
+      }
+      .class1 {
+        width: 17%;
+      }
+      .class2 {
+        width: 19%;
+      }
+      .class3 {
+        width: 26%;
+      }
+      .class4 {
+        width: 38%;
+      }
+      .personInfo td {
+        padding: 2px;
+        background-color: #f9f9f9;
+        text-align: center;
+        margin: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+      .personInfo {
+        margin: 0px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container" style="min-width: 450px; padding-top: 0">
+      <div style="height: 80px; margin: 10px auto; padding-top: 10px; text-align: center; background: #318839; border-bottom: 1px solid #196618">
+        <img src="static/logo3.jpg" style="max-width: 98%" />
+      </div>
+      <div id="dvH2" style="margin: 20px; display: none"></div>
+      <div id="dvZC" style="">
+        <div style="text-align: center; height: 50px; margin: 40px; border-bottom: 1px solid #eee">
+          <h2 style="font-size: 26px">详细信息</h2>
+        </div>
+        <div id="dvSearch" style="margin: 0 auto">
+          <div id="dvtable" style="margin: 0 auto; width: 50%">
+            <div style="width: 100%">
+              <div style="float: left; font-weight: bold; margin-bottom: 5px; font-size: 16px; text-align: center">注册执业类别:</div>
+              <div id="spanCategory" style="float: left; margin-bottom: 5px; font-size: 16px; text-align: left">二级注册建造师</div>
+            </div>
+            <table id="NowInfo" class="personInfo" style="width: 100%">
+              <tbody>
+                <tr>
+                  <th colspan="4" class="titleth"><span style="font-size: 16px">最新注册信息</span></th>
+                </tr>
+                <tr>
+                  <td class="class1">姓名</td>
+                  <td class="class3"><label id="lblName">刘广</label></td>
+                  <td class="class2">企业名称</td>
+                  <td><label id="lblCompName">深圳市凯迪尔广告有限公司</label></td>
+                </tr>
+                <tr class="nozjgcs">
+                  <td class="class1">注册编号</td>
+                  <td class="class3"><label id="lblRegNum">粤2442020202114906</label></td>
+                  <td class="class2">执业印章号</td>
+                  <td><label id="lblStamperNo">粤2442020202114906（00）</label></td>
+                </tr>
+                <tr class="zcyxq" style="display: none">
+                  <td class="class1"><span></span></td>
+                  <td class="class3"></td>
+                  <td class="class2">注册有效期</td>
+                  <td><label id="lblValidDT">2024-06-08</label></td>
+                </tr>
+                <tr>
+                  <td class="class1">注册专业</td>
+                  <td class="class3"><span>建筑</span></td>
+                  <td class="class2">注册有效期</td>
+                  <td><label>2024-06-08</label></td>
+                </tr>
+                <tr class="zczy">
+                  <td class="class1">原注册编号</td>
+                  <td class="class3"><span></span></td>
+                  <td class="class2">原执业印章号</td>
+                  <td><label></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <table id="InitInfo" class="personInfo" style="width: 100%; display: none">
+              <tbody>
+                <tr>
+                  <th colspan="4" class="titleth"><span style="font-size: 16px">初始注册信息</span></th>
+                </tr>
+                <tr>
+                  <td class="class1">姓名</td>
+                  <td class="class3"><label id="cslblName"></label></td>
+                  <td class="class2">企业名称</td>
+                  <td><label id="cslblCompName"></label></td>
+                </tr>
+              </tbody>
+            </table>
+            <table id="ChangeInfo" class="personInfo" style="width: 100%">
+              <thead>
+                <tr>
+                  <th colspan="4" class="titleth">
+                    <div style="width: 100%">
+                      <div style="float: left; width: 50%; font-size: 16px; text-align: left">变更注册信息</div>
+                      <div id="ChangeInfocount" style="float: left; width: 50%; text-align: right">记录数：无</div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="class1">变更注册日期</td>
+                  <td class="class3">变更注册原因</td>
+                  <td class="class5" colspan="2">变更内容</td>
+                </tr>
+                <script class="template_object" type="text/template">
+                  <tr class="row">
+                      <td>{passDate}</td>
+                      <td>{tablename}</td>
+                      <td colspan="2">
+                         {ReplaceCompName(tablename,CompName,OldCompName)}
+                      </td>
+                  </tr>
+                </script>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <table id="AddInfo" class="personInfo zczy" style="width: 100%">
+              <thead>
+                <tr>
+                  <th colspan="4" class="titleth">
+                    <div style="width: 100%">
+                      <div style="float: left; width: 50%; font-size: 16px; text-align: left">增项注册信息</div>
+                      <div id="AddInfocount" style="float: left; width: 50%; text-align: right">记录数：无</div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="class1">增项注册日期</td>
+                  <td class="class3">增项注册专业</td>
+                  <td class="class2">注册有效期</td>
+                  <td class="class4">证书编号</td>
+                </tr>
+                <script class="template_object" type="text/template">
+                  <tr class="row">
+                      <td>{passDate}</td>
+                      <td >{profession}</td>
+                      <td >{PubValidDT}</td>
+                      <td >{CertNum}</td>
+                  </tr>
+                </script>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <table id="ExtendInfo" class="personInfo" style="width: 100%">
+              <thead>
+                <tr>
+                  <th colspan="4" class="titleth">
+                    <div style="width: 100%">
+                      <div style="float: left; width: 50%; font-size: 16px; text-align: left">延续注册信息</div>
+                      <div id="ExtendInfocount" style="float: left; width: 50%; text-align: right">记录数：无</div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="class1">延续注册日期</td>
+                  <td class="class3">延续注册专业</td>
+                  <td class="class2">注册有效期</td>
+                  <td class="class5"><label id="Labelzcbh1">注册编号</label></td>
+                </tr>
+                <script class="template_object" type="text/template">
+                  <tr class="row">
+                      <td>{passDate}</td>
+                      <td>{profession}</td>
+                      <td>{PubValidDT}</td>
+                      <td>{zsbh}</td>
+                  </tr>
+                </script>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <table id="LogoutInfo" class="personInfo" style="width: 100%">
+              <thead>
+                <tr>
+                  <th colspan="4" class="titleth">
+                    <div style="width: 100%">
+                      <div style="float: left; width: 50%; font-size: 16px; text-align: left">注销注册信息</div>
+                      <div id="LogoutInfocount" style="float: left; width: 50%; text-align: right">记录数：无</div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="class1">注销注册日期</td>
+                  <td class="class3">申请注销专业</td>
+                  <td class="class5" colspan="2">注销原因</td>
+                </tr>
+                <script class="template_object" type="text/template">
+                  <tr class="row">
+                      <td>{passDate}</td>
+                      <td>{profession}</td>
+                      <td colspan="2">{logoutReason}</td>
+                  </tr>
+                </script>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <table id="AgainInfo" class="personInfo" style="width: 100%">
+              <thead>
+                <tr>
+                  <th colspan="4" class="titleth">
+                    <div style="width: 100%">
+                      <div style="float: left; width: 50%; font-size: 16px; text-align: left">重新注册信息</div>
+                      <div id="AgainInfocount" style="float: left; width: 50%; text-align: right">记录数：无</div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <td class="class1">重新注册日期</td>
+                  <td class="class3">企业名称</td>
+                  <td class="class2">注册专业</td>
+                  <td class="class5"><label id="Labelzcbh2">注册编号</label></td>
+                </tr>
+                <script class="template_object" type="text/template">
+                  <tr class="row">
+                      <td>{passDate}</td>
+                      <td>{CompName}</td>
+                      <td>{profession}</td>
+                      <td>{zsbh}</td>
+                  </tr>
+                </script>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="dvmeg"></div>
+    </div>
+    <div id="footer">
+      <p>
+        广东省建设信息中心版权所有, 广州市华软科技发展有限公司技术支持,
+        <a style="color: #ddd" target="_blank" href="http://beian.miit.gov.cn">粤ICP备19160068号-3</a>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010402002406" style="display: inline-block; line-height: 22px; color: #e4dada">
+          <img src="http://www.gdcic.net/images/beian.png" style="float: left" />
+          粤公网安备 44010402002406号
+        </a>
+      </p>
+      <p>业务咨询：020-82127766，技术支持电话：020-38200430或13611415991, 技术支持QQ：1809456836, 技术支持QQ群：709144972</p>
+      <p>
+        建议使用360或Google Chrome浏览器
+        <script type="text/javascript">
+          var cnzz_protocol = 'https:' == document.location.protocol ? ' https://' : ' http://';
+          document.write(unescape("%3Cspan id='cnzz_stat_icon_1260260682'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260260682%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <span id="cnzz_stat_icon_1260260682"></span>
+      </p>
+    </div>
+    <script src="static/js/jquery.min.js"></script>
+    <script>
+      $(function () {
+        changeDivWidth();
+        window.onresize = function () {
+          changeDivWidth();
+        };
+        function changeDivWidth() {
+          var webWidth = document.body.offsetWidth;
+          var styleElement = document.getElementById('dvtable');
+          if (parseInt(webWidth) > 1000) {
+            styleElement.style.width = '50%';
+          } else if (parseInt(webWidth) < 700) {
+            styleElement.style.width = '100%';
+          } else {
+            styleElement.style.width = '75%';
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
